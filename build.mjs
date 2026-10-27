@@ -1,0 +1,45 @@
+import fs from "node:fs";
+const policy = JSON.parse(fs.readFileSync("docs/policy.json", "utf8"));
+const escape = value => String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+const en = policy.languages.english;
+const sections = lang => lang.sections.map(([title, body], index) => `<section id="section-${index}"><span class="number">${String(index + 1).padStart(2, "0")}</span><div><h2>${escape(title)}</h2><p>${escape(body)}</p></div></section>`).join("");
+const html = `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Privacy notice for Age of Balls by ChillLands. Optional analytics, error reports and feedback."><meta name="theme-color" content="#f5f0e6"><title>ChillLands · Age of Balls Privacy Policy</title>
+<style>
+:root{color-scheme:light;--paper:#f5f0e6;--ink:#272b25;--muted:#666b60;--line:#d7d8ca;--green:#344f3c}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:26px}body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.75}
+a{color:var(--green);text-underline-offset:4px}a:hover{text-decoration-thickness:2px}button,select{font:inherit}a:focus-visible,select:focus-visible{outline:3px solid #bc7b33;outline-offset:5px}
+.wrap{max-width:1160px;margin:auto;padding:0 40px}header{border-bottom:1px solid var(--line)}.top{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:100px}.brand{font-weight:800;letter-spacing:-1px;font-size:25px;text-decoration:none;color:var(--ink)}.brand span{font-size:12px;letter-spacing:2px;display:block;color:var(--muted);font-weight:600}.language{display:flex;align-items:center;gap:10px}select{border:1px solid var(--line);border-radius:6px;background:transparent;padding:8px 12px;color:var(--ink)}
+.hero{padding:64px 0 48px;max-width:850px}.eyebrow{color:var(--green);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:12px}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:1.12;letter-spacing:-2px;margin:12px 0 20px}.intro{font-size:20px;color:var(--muted);margin:0 0 24px}.identity{font-size:14px;max-width:850px}.updated{font-size:13px;color:var(--muted);margin:10px 0 0}
+.body{display:grid;grid-template-columns:225px minmax(0,1fr);gap:55px;align-items:start;padding-bottom:64px}nav{position:sticky;top:24px;border-top:1px solid var(--line);padding-top:12px}nav a{display:block;font-size:13px;padding:8px 0;text-decoration:none;color:var(--muted);line-height:1.5}nav a:hover{color:var(--ink)}section{display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;border-top:1px solid var(--line);padding:28px 0 32px}.number{font-size:12px;color:var(--muted);padding-top:7px;font-variant-numeric:tabular-nums}h2{font-size:22px;line-height:1.35;font-weight:650;letter-spacing:-.4px;margin:0 0 14px}p{margin:0;overflow-wrap:anywhere}article p{font-size:16px}
+footer{border-top:1px solid var(--line);padding:30px 0 42px;color:var(--muted);font-size:13px}.sources{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:16px}.sources a{color:var(--muted)}.contact{font-weight:650}
+@media(max-width:760px){.wrap{padding:0 22px}.top{min-height:90px}.brand{font-size:22px}.brand span{font-size:10px}.language label{display:none}.hero{padding:40px 0 30px}.body{display:block}nav{position:static;display:flex;flex-wrap:wrap;gap:0 16px;padding:12px 0 24px}nav a{font-size:12px;max-width:46%}section{gap:12px;grid-template-columns:24px minmax(0,1fr);padding:24px 0}h2{font-size:21px}.intro{font-size:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}@media print{nav,.language{display:none}.body{display:block}body{background:white}.hero{padding:20px 0}section{break-inside:avoid}.wrap{padding:0}}
+</style></head><body><header><div class="wrap top"><a href="./" class="brand">ChillLands<span>AGE OF BALLS</span></a><div class="language"><label for="language">Language / Dil</label><select id="language" aria-label="Language / Dil"><option value="english">English</option><option value="turkish">Türkçe</option></select></div></div></header>
+<main class="wrap"><div class="hero"><div class="eyebrow">Age of Balls</div><h1 id="title">${escape(en.title)}</h1><p id="intro" class="intro">${escape(en.intro)}</p><p id="identity" class="identity">${escape(en.identity)}: ${escape(policy.controller)} (${escape(en.business)}).</p><p class="contact"><a href="mailto:${policy.email}">${policy.email}</a></p><p id="updated" class="updated">${en.date}: ${policy.updated}</p></div><div class="body"><nav id="contents" aria-label="Contents">${en.sections.map(([title], index)=>`<a href="#section-${index}">${escape(title)}</a>`).join("")}</nav><article id="policy">${sections(en)}</article></div></main>
+<footer><div class="wrap"><span>ChillLands · Age of Balls</span><div class="sources"><a href="https://posthog.com/docs/data/events-retention" rel="noreferrer">PostHog retention</a><a href="https://posthog.com/docs/privacy/data-storage" rel="noreferrer">PostHog deletion</a><a href="https://sentry.io/privacy/" rel="noreferrer">Sentry privacy</a><a href="https://store.steampowered.com/privacy_agreement/" rel="noreferrer">Steam privacy</a><a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">Hosting privacy</a><a href="https://www.kvkk.gov.tr/" rel="noreferrer">KVKK</a></div></div></footer>
+<script id="content" type="application/json">${JSON.stringify(policy).replaceAll("<","\\u003c")}</script>
+<script>
+const data=JSON.parse(document.getElementById("content").textContent);
+const select=document.getElementById("language");
+function render(key){
+const lang=data.languages[key]||data.languages.english;
+document.documentElement.lang=lang.code;select.value=data.languages[key]?key:"english";
+document.getElementById("title").textContent=lang.title;
+document.getElementById("intro").textContent=lang.intro;
+document.getElementById("identity").textContent=lang.identity+": "+data.controller+" ("+lang.business+").";
+document.getElementById("updated").textContent=lang.date+": "+data.updated;
+const article=document.getElementById("policy"),nav=document.getElementById("contents");
+article.replaceChildren();nav.replaceChildren();
+lang.sections.forEach(([title,body],i)=>{
+const section=document.createElement("section");section.id="section-"+i;
+const number=document.createElement("span");number.className="number";number.textContent=String(i+1).padStart(2,"0");
+const inner=document.createElement("div"),heading=document.createElement("h2"),paragraph=document.createElement("p");
+heading.textContent=title;paragraph.textContent=body;inner.append(heading,paragraph);section.append(number,inner);article.append(section);
+const link=document.createElement("a");link.href="#section-"+i;link.textContent=title;nav.append(link);
+});}
+render(new URL(location.href).searchParams.get("lang")||"english");
+select.addEventListener("change",()=>{const url=new URL(location.href);url.searchParams.set("lang",select.value);history.replaceState(null,"",url);render(select.value);});
+</script></body></html>`;
+fs.writeFileSync("docs/index.html",html);
+console.log("Built static policy: "+Object.keys(policy.languages).length+" languages; no external scripts or fonts.");
