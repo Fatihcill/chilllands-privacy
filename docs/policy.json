@@ -45,49 +45,6 @@
           "If you are below the local age for independent consent, leave optional sharing off and ask your parent or guardian. Contact us about information shared by a child. Material changes to collection or purposes will be explained before applying them and renewed consent sought where required. Contact the data controller through the support email above for questions, requests and applicable safeguards."
         ]
       ]
-    },
-    "turkish": {
-      "name": "Türkçe",
-      "code": "tr",
-      "title": "Gizlilik politikası",
-      "date": "Son güncelleme",
-      "identity": "Veri sorumlusu",
-      "business": "ChillLands adıyla faaliyet gösteren şahıs işletmesi",
-      "intro": "Age of Balls · Paylaşım isteğe bağlı. Karar senin.",
-      "sections": [
-        [
-          "Tercihler ve hukuki sebepler",
-          "Kullanım/performans paylaşımı ve hata raporları varsayılan olarak kapalıdır. Karşılamadaki kutu, onay verdiğinde ikisini birlikte açar; Ayarlar > Geri Bildirim bölümünden ayrı ayrı değiştirilebilir. İsteğe bağlı telemetri açık rızana dayanır. Reddetmek veya rızayı geri almak oynamayı engellemez. Destek yazışmaları talebini yanıtlamak için, duruma göre meşru menfaat veya sözleşmenin kurulması/ifası hukuki sebebiyle işlenir."
-        ],
-        [
-          "Kullanım ve performans",
-          "Kullanım paylaşımı açıksa PostHog'a rastgele kurulum kimliği, oturum/olay kimlikleri, oyun sürümü, ekranlar ve geçirilen süre, eğitim/ilerleme ve maç olayları, yükleme/yeniden bağlantı sonuçları, performans özetleri ve genel işletim sistemi/GPU/CPU/RAM/ekran/kalite kategorileri gönderilir. Oturumları ilişkilendiren bu kimlikler takma adlandırılmıştır; tam anonim değildir. Reklam profilleri, oturum tekrarı veya otomatik ekran kaydı açık değildir."
-        ],
-        [
-          "Hata raporları ve kapsam dışındakiler",
-          "Hata paylaşımı açıksa Sentry'ye ayrı bir rastgele kimlik, hata türü ve kod konumu, sürüm, oturum sağlığı ve önceden tanımlı son 30 eyleme kadar bilgi gönderilir. Telemetri yüklerinde oyuncu adları, Steam kimliği, sohbet, kayıt dosyaları, dosya yolları, ham hata mesajları, ekran görüntüleri, video veya bellek dökümleri bulunmaz. Olay içeriğinde IP maskelense bile sağlayıcı ağ isteğini alırken IP adresini görebilir."
-        ],
-        [
-          "Geri bildirim, yerel dosyalar ve diğer hizmetler",
-          "Geri bildirim formu metnini yerelde tutar ve e-posta uygulamanda taslak açar; otomatik e-posta göndermez. Sen gönderirsen e-posta adresin, mesajın ve seçtiğin ekler Gmail destek kutumuza ulaşır. Hassas bilgi eklememeni öneririz. Günlükler, çökme raporları, oyun kayıtları ve tercihler cihazında kalabilir; otomatik eklenmez. Steam hesap, satın alma ve platform/ağ hizmetlerini Valve'ın gizlilik politikası kapsamında ayrıca yürütür."
-        ],
-        [
-          "Saklama",
-          "Bekleyen telemetri, oyun önbellek bakımı yaptığında yedi günden sonra temizlenmeye uygundur; ilgili paylaşımı kapatmak gönderilmemiş kuyruğu temizler. Tercihler ve veri kimliği makbuzları, seçimlerin ve silme taleplerin için yerelde kalabilir. PostHog'un yayımladığı ücretsiz plan olay geçmişi penceresi bir yıldır; sorgu penceresinin bitmesi fiziksel silinme kanıtı değildir. Sentry'nin yayımladığı Developer hata olayı süresi 30 gündür; sürüm sağlığı özetleri, sayaçlar ve yedekler ayrı süreler izler. Bu özetleri sürüm kararlılığını değerlendirmek için gerekli olduğu ölçüde kullanırız. Destek yazışmaları talepleri çözmek, çözümü belgelemek veya yasal yükümlülükleri karşılamak için tutulur. Kaydın için geçerli saklama veya silme kapsamını bize sorabilirsin."
-        ],
-        [
-          "Alıcılar ve uluslararası işleme",
-          "Telemetri için PostHog Inc. (AB projesi) ve Sentry adıyla faaliyet gösteren Functional Software Inc. (Almanya bölgesi projesi), destek e-postası için Google/Gmail kullanılır. Bu statik politika GitHub Pages (GitHub, Inc.) üzerinden barındırılır. Sayfaya analitik veya reklam çerezi eklemeyiz; barındırıcılar istek/güvenlik kayıtlarını işleyebilir. AB uç noktaları, tüm destek, alt işleyen ve yedek işlemlerinin AB'de kaldığı anlamına gelmez. Yurt dışına aktarım için geçerli hukuki şartlar ayrıca uygulanır; verine uygulanan güvenceler hakkında bize ulaşabilirsin. Bu metin, belirli bir aktarım sözleşmesinin imzalandığını tasdik etmez."
-        ],
-        [
-          "Rızayı geri alma, silme ve hakların",
-          "Ayarlar > Geri Bildirim'den ilgili paylaşımı kapatarak yeni toplamayı durdurabilir ve bekleyen veriyi temizleyebilirsin. Önceden gönderilmiş veriler için VERİ KİMLİKLERİNİ KOPYALA çıktısındaki ilgili mevcut/eski kimlikleri destek adresine göndererek ayrıca talep ilet. Rızayı geri aldıktan sonra yeniden açmak yeni kimlik oluşturur. Sağlayıcıdaki silme eş zamansız olabilir; tüm yedeklerin veya oturum özetlerinin anında silineceği sözü verilmez. Uygulanabilir mevzuat kapsamında erişim, düzeltme, silme, sınırlama, taşınabilirlik, itiraz ve KVKK Madde 11'deki haklarını kullanabilir; KVKK'ya veya yetkili diğer makama şikâyet edebilirsin. Geçerli yasal sürede yanıtlarız: genel olarak KVKK'da 30 gün, GDPR'da bir ay; hukuka uygun uzatmalar açıklanır. Yalnız otomatik işlemeyle hukuki veya benzer önemli sonuç doğuran kararlar vermeyiz."
-        ],
-        [
-          "Çocuklar, değişiklikler ve iletişim",
-          "Bulunduğun yerde bağımsız rıza için gereken yaşın altındaysan isteğe bağlı paylaşımı kapalı tutup ebeveynine veya vasine danış. Bir çocuğun paylaştığı bilgiler için bize ulaşabilirsin. Toplama veya amaçlarla ilgili önemli değişiklikler uygulanmadan açıklanır; gerektiğinde yeniden rıza alınır. Soru, hak talebi ve geçerli güvenceler için yukarıdaki destek e-postasından veri sorumlusuna ulaşabilirsin."
-        ]
-      ]
     }
   }
 }
